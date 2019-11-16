@@ -1,0 +1,17 @@
+{
+    "name": "v20100t/plantuml-graph",
+    "description": "Draw plantuml graph with php",
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {"v20100t\\PlantumlGraph\\": "src/"}
+    },
+    "require": {
+        "jawira/plantuml-encoding": "^1.0"
+    },
+    "authors": [
+        {
+            "name": "v20100t",
+            "email": "v20100t@gmail.com"
+        }
+    ]
+}
