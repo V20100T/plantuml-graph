@@ -6,7 +6,8 @@
         "psr-4": {"v20100t\\PlantumlGraph\\": "src/"}
     },
     "require": {
-        "jawira/plantuml-encoding": "^1.0"
+        "jawira/plantuml-encoding": "^1.0",
+        "guzzlehttp/guzzle": "^6.3"
     },
     "authors": [
         {
