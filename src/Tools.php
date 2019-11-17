@@ -52,7 +52,7 @@ class Tools
         return $datas;
     }
 
-    public function saveInFile($filePath, $datas, $ext)
+    public static function saveInFile($filePath, $datas, $ext)
     {
         return file_put_contents($filePath.'.'.$ext, $datas);
     }
