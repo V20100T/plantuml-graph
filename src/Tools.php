@@ -6,7 +6,7 @@ use GuzzleHttp\Exception\ClientException;
 
 class Tools
 {
-    public function getUrls($baseUrl, $encodedGraph)
+    public static function getUrls($baseUrl, $encodedGraph)
     {
         return $urls = [
             'debug' => $baseUrl.'uml/'.$encodedGraph,
@@ -16,7 +16,7 @@ class Tools
         ];
     }
 
-    public static function getDatas($url)
+    public static function getCurlDatas($url)
     {
         $clientDatas = new \GuzzleHttp\Client();
 
@@ -50,5 +50,10 @@ class Tools
         // $this->logger->debug($responseDatas->getBody());
 
         return $datas;
+    }
+
+    public function saveInFile($filePath, $datas, $ext)
+    {
+        return file_put_contents($filePath.'.'.$ext, $datas);
     }
 }
