@@ -16,13 +16,26 @@ class Tools
         ];
     }
 
-    public static function getCurlDatas($url)
+    /**
+    *
+    * Proxy setting :
+    *   guzzle proxy
+    *    http://docs.guzzlephp.org/en/latest/request-options.html#proxy
+    */
+    public static function getCurlDatas($url, $proxy = false)
     {
+        // Handle proxy settings
+        $proxySettings = false;
+        if($proxy && is_array($proxy)) {
+            $proxySettings = [
+                'proxy' => $proxy
+            ];
+        }
+        
         $clientDatas = new \GuzzleHttp\Client();
 
         try {
-            // $this->logger->info(__CLASS__.__METHOD__.' > URL : '.$url);
-            $responseDatas = $clientDatas->request('GET', $url);
+            $responseDatas = $clientDatas->request('GET', $url, $proxySettings);
             //code...
         } catch (ClientException $e) {
             $mess = 'ERROR : ';
