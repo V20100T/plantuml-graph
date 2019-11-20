@@ -39,3 +39,13 @@ Draw and modeling plantuml graph with PHP
 * https://real-world-plantuml.com/?type=component
 * https://hub.docker.com/r/plantuml/plantuml-server/
 
+
+## Licence
+
+WTFPL : Do What The Fuck You Want to Public License
+
+https://fr.wikipedia.org/wiki/WTFPL
+
+
+ 
+
