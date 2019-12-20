@@ -14,11 +14,12 @@ class Builder
     public $config = [];
     public $encoded = false;
 
-    public function __construct($graphHeader, $graphSkinParam, $graphFooter)
+    public function __construct($graphHeader, $graphSkinParam, $graphFooter, $graphIconsBaseUrl = 'https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/v2.1.0')
     {
         $this->config['graphHeader'] = $graphHeader;
         $this->config['graphFooter'] = $graphFooter;
         $this->config['graphSkinParam'] = $graphSkinParam;
+        $this->config['graphIconsBaseUrl'] = $graphIconsBaseUrl;
     }
 
     public function setHeader()
@@ -102,7 +103,7 @@ class Builder
 
     public function addIconOffice()
     {
-        $this->header .= '!define ICONURL https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/v2.1.0
+        $this->header .= '!define ICONURL '.$this->config['graphIconsBaseUrl'].'
         !includeurl ICONURL/common.puml
         !includeurl ICONURL/devicons/mysql.puml
         !includeurl ICONURL/font-awesome/database.puml'."\n";
