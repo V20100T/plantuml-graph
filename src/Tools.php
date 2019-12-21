@@ -17,21 +17,20 @@ class Tools
     }
 
     /**
-    *
-    * Proxy setting :
-    *   guzzle proxy
-    *    http://docs.guzzlephp.org/en/latest/request-options.html#proxy
-    */
-    public static function getCurlDatas($url, $proxy = false)
+     * Proxy setting :
+     *   guzzle proxy
+     *    http://docs.guzzlephp.org/en/latest/request-options.html#proxy.
+     */
+    public static function getCurlDatas($url, $proxy = [])
     {
         // Handle proxy settings
-        $proxySettings = false;
-        if($proxy && is_array($proxy)) {
+        $proxySettings = [];
+        if ($proxy && is_array($proxy)) {
             $proxySettings = [
-                'proxy' => $proxy
+                'proxy' => $proxy,
             ];
         }
-        
+
         $clientDatas = new \GuzzleHttp\Client();
 
         try {
