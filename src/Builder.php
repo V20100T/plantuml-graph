@@ -236,9 +236,9 @@ class Builder
         }
     }
 
-    public function addFlow($slugTo, $slugFrom, $comment = '', $link = '<-->')
+    public function addFlow($slugFrom, $slugTo, $comment = '', $link = '<-->')
     {
-        $this->graph .= $slugTo.' '.$link.' '.$slugFrom.' : '.$comment."\n";
+        $this->graph .= $slugFrom.' '.$link.' '.$slugTo.' : '.$comment."\n";
     }
 
     public function addClose()
