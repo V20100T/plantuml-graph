@@ -236,6 +236,22 @@ class Builder
         }
     }
 
+    /**
+     * 
+     * 
+     * https://plantuml.com/fr/sequence-diagram
+     * 
+     * Color exemple : 
+     * 
+     *       @startuml
+     *       Bob -[#red]> Alice : hello
+     *       Alice -[#0000FF]->Bob : ok
+     *       @enduml
+     * 
+     * > Handle the colors with the creation in DB of new plantuml-tool type links with the color inside the macro.
+     *  Ex : Macros : -[#red]> AND <-[#red]-  are created for PROXY links
+     * 
+     */
     public function addFlow($slugFrom, $slugTo, $comment = '', $link = '<-->')
     {
         $this->graph .= $slugFrom.' '.$link.' '.$slugTo.' : '.$comment."\n";
